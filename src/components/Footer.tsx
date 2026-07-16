@@ -1,21 +1,13 @@
-"use client";
-
 import React from "react";
-import { getWhatsAppLink } from "@/utils/whatsapp";
+import { Clock, MapPin, Phone } from "lucide-react";
+import { BookingButton } from "@/components/ui/BookingButton";
 
 export default function Footer() {
-  const handleBooking = () => {
-    const message = "Halo CREWCUT Studio, saya ingin booking jadwal potong rambut.";
-    window.open(getWhatsAppLink(message), "_blank");
-  };
-
   return (
     <footer id="kontak" className="bg-bg-main border-t border-border-main scroll-mt-20">
-      {/* Contact & Hours Info Section */}
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           
-          {/* Info Side */}
           <div className="flex flex-col justify-between">
             <div>
               <h2 className="font-display text-sm font-bold uppercase tracking-widest text-gold">
@@ -26,14 +18,10 @@ export default function Footer() {
               </p>
               <div className="mt-4 h-1 w-12 bg-gold" />
               
-              {/* Details List */}
               <div className="mt-10 space-y-8">
-                {/* Hours */}
                 <div className="flex items-start gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gold/10 text-gold">
-                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+                    <Clock className="h-5 w-5" />
                   </div>
                   <div>
                     <h4 className="font-display text-sm font-bold uppercase tracking-wider text-text-primary">
@@ -45,13 +33,9 @@ export default function Footer() {
                   </div>
                 </div>
 
-                {/* Address */}
                 <div className="flex items-start gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gold/10 text-gold">
-                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25s-7.5-4.108-7.5-11.25a7.5 7.5 0 1115 0z" />
-                    </svg>
+                    <MapPin className="h-5 w-5" />
                   </div>
                   <div>
                     <h4 className="font-display text-sm font-bold uppercase tracking-wider text-text-primary">
@@ -64,12 +48,9 @@ export default function Footer() {
                   </div>
                 </div>
 
-                {/* Phone */}
                 <div className="flex items-start gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gold/10 text-gold">
-                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.802-5.122-4.1-6.924-6.924l1.293-.97a1.125 1.125 0 00.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                    </svg>
+                    <Phone className="h-5 w-5" />
                   </div>
                   <div>
                     <h4 className="font-display text-sm font-bold uppercase tracking-wider text-text-primary">
@@ -83,18 +64,17 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Quick action button inside info side */}
             <div className="mt-10 pt-6 border-t border-border-main">
-              <button
-                onClick={handleBooking}
-                className="inline-flex items-center justify-center rounded-lg bg-gold px-6 py-3 text-sm font-bold text-black hover:bg-gold-light transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
+              <BookingButton
+                message="Halo CREWCUT Studio, saya ingin booking jadwal instan."
+                variant="primary"
+                className="px-6 py-3 text-sm"
               >
                 Booking Instan Sekarang
-              </button>
+              </BookingButton>
             </div>
           </div>
 
-          {/* Interactive Map Side */}
           <div className="relative min-h-[300px] h-full w-full rounded-2xl overflow-hidden border border-border-main bg-bg-surface shadow-md">
             <iframe
               width="100%"
@@ -110,10 +90,8 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Footer Branding & Links */}
       <div className="border-t border-border-main bg-[#060606]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Logo & Brand description */}
           <div className="text-center md:text-left">
             <a href="#" className="font-display text-xl font-bold tracking-wider text-text-primary">
               CREW<span className="text-gold">CUT</span> STUDIO
@@ -123,7 +101,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Social Links Mock */}
           <div className="flex gap-4">
             <a href="#" className="text-text-secondary hover:text-gold transition-colors duration-200" aria-label="Instagram">
               <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
@@ -142,7 +119,6 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Dev Info / Copyright */}
           <div className="text-center md:text-right text-xs text-text-secondary font-light">
             <p>&copy; {new Date().getFullYear()} CREWCUT Studio. All rights reserved.</p>
             <p className="mt-1">
