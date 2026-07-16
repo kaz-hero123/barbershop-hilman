@@ -44,7 +44,7 @@ export const BARBERS = [
     nickname: "The Barber",
     specialty: "Classic Cut & Beard Sculpting",
     bio: "Ahli dalam potongan klasik legendaris dan penataan jenggot yang presisi sesuai karakter dan garis rahang Anda.",
-    imageUrl: "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?auto=format&fit=crop&q=80&w=600&h=800",
+    imageUrl: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=600&h=800",
   },
 ];
 
@@ -76,7 +76,7 @@ export const GALLERY_PHOTOS = [
   {
     id: 5,
     alt: "Taper Fade Sharp Outline",
-    imageUrl: "https://images.unsplash.com/photo-1593702295094-aec22597af65?auto=format&fit=crop&q=80&w=600&h=600",
+    imageUrl: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600&h=600",
     category: "Haircut",
   },
   {
