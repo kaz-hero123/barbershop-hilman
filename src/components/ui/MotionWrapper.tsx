@@ -10,7 +10,7 @@ interface MotionWrapperProps extends HTMLMotionProps<"div"> {
 }
 
 export function MotionWrapper({ children, animation = "fadeIn", delay = 0, className, ...props }: MotionWrapperProps) {
-  const animations = {
+  const animations: Record<string, any> = {
     fadeIn: {
       initial: { opacity: 0 },
       whileInView: { opacity: 1 },
