@@ -22,12 +22,7 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-3xl text-left">
-          <MotionWrapper animation="slideUp" delay={0.1}>
-            <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/5 px-3 py-1 text-xs font-semibold tracking-widest text-gold uppercase mb-6">
-              <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-              SHARP IN 30 Concept
-            </div>
-          </MotionWrapper>
+    
 
           <MotionWrapper animation="slideUp" delay={0.2}>
             <h1 className="font-display text-5xl sm:text-7xl font-bold tracking-tight text-text-primary leading-none uppercase">

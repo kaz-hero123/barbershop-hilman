@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Oswald, Inter } from "next/font/google";
+import { Big_Shoulders, Inter } from "next/font/google";
 import "./globals.css";
 
-const oswald = Oswald({
+const bigShoulders = Big_Shoulders({
   variable: "--font-oswald",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
 });
 
 const inter = Inter({
@@ -41,7 +40,7 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${oswald.variable} ${inter.variable} h-full antialiased scroll-smooth`}
+      className={`${bigShoulders.variable} ${inter.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full bg-bg-main text-text-primary antialiased selection:bg-gold selection:text-black">
         {children}
