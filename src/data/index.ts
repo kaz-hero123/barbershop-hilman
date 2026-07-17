@@ -58,19 +58,19 @@ export const GALLERY_PHOTOS = [
   {
     id: 2,
     alt: "Hair Styling Process",
-    imageUrl: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600&h=600",
+    imageUrl: "https://images.unsplash.com/photo-1647140655214-e4a2d914971f?auto=format&fit=crop&q=80&w=600&h=600",
     category: "Styling",
   },
   {
     id: 3,
     alt: "Premium Clipper and Tools",
-    imageUrl: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=600&h=600",
+    imageUrl: "https://images.unsplash.com/photo-1596362601603-b74f6ef166e4?auto=format&fit=crop&q=80&w=600&h=600",
     category: "Tools & Vibe",
   },
   {
     id: 4,
     alt: "Razor Beard Shaping Detail",
-    imageUrl: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=600&h=600",
+    imageUrl: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&q=80&w=600&h=600",
     category: "Beard Work",
   },
   {
