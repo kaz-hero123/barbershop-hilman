@@ -18,12 +18,12 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-bg-main/90 via-bg-main/40 to-transparent" />
       </div>
 
-      <div className="absolute top-1/4 left-1/4 -z-10 h-72 w-72 rounded-full bg-gold/10 blur-[100px]" />
+
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-3xl text-left">
           <MotionWrapper animation="slideUp" delay={0.1}>
-            <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/5 px-3 py-1 text-xs font-semibold tracking-widest text-gold uppercase mb-6 animate-pulse">
+            <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/5 px-3 py-1 text-xs font-semibold tracking-widest text-gold uppercase mb-6">
               <span className="h-1.5 w-1.5 rounded-full bg-gold" />
               SHARP IN 30 Concept
             </div>
@@ -33,7 +33,7 @@ export default function Hero() {
             <h1 className="font-display text-5xl sm:text-7xl font-bold tracking-tight text-text-primary leading-none uppercase">
               PRESISI.<br />
               CEPAT.<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-light">TAJAM.</span>
+              <span className="text-gold italic font-bold">TAJAM.</span>
             </h1>
           </MotionWrapper>
 
@@ -59,7 +59,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
         <span className="text-[10px] tracking-widest text-text-secondary uppercase">Scroll</span>
         <svg className="h-5 w-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />

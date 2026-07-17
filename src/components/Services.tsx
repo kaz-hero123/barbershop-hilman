@@ -7,7 +7,7 @@ import { BookingButton } from "@/components/ui/BookingButton";
 export default function Services() {
   return (
     <section id="layanan" className="py-24 bg-bg-main relative scroll-mt-20">
-      <div className="absolute top-1/2 right-1/4 -z-10 h-96 w-96 rounded-full bg-gold/5 blur-[120px]" />
+
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <MotionWrapper animation="slideUp" className="text-center max-w-3xl mx-auto mb-16">
@@ -29,7 +29,7 @@ export default function Services() {
               key={service.id}
               animation="slideUp"
               delay={index * 0.1}
-              className="group flex flex-col justify-between rounded-xl border border-border-main bg-bg-surface p-8 transition-all duration-300 hover:border-gold/30 hover:bg-bg-surface-elevated hover:shadow-[0_10px_30px_rgba(200,169,97,0.05)]"
+              className="group flex flex-col justify-between rounded-xl border border-border-main bg-bg-surface p-8 transition-all duration-300 hover:border-gold/30"
             >
               <div>
                 <div className="flex items-start justify-between gap-4">
