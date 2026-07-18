@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="relative flex min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden py-20">
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=1920"
+          src="https://images.unsplash.com/photo-1521590832167-7bfcfaa6362f?auto=format&fit=crop&q=80&w=1920"
           alt="CREWCUT Studio Interior"
           fill
           priority
@@ -26,15 +26,15 @@ export default function Hero() {
 
           <MotionWrapper animation="slideUp" delay={0.2}>
             <h1 className="font-display text-5xl sm:text-7xl font-bold tracking-tight text-text-primary leading-none uppercase">
-              PRESISI.<br />
-              CEPAT.<br />
-              <span className="text-gold italic font-bold">TAJAM.</span>
+              MASUK BERANTAKAN.<br />
+              KELUAR TAJAM.<br />
+              <span className="text-gold italic font-bold">30 MENIT.</span>
             </h1>
           </MotionWrapper>
 
           <MotionWrapper animation="slideUp" delay={0.3}>
             <p className="mt-6 text-lg sm:text-xl text-text-secondary leading-relaxed max-w-xl font-light">
-              Grooming premium untuk profesional aktif. Tanpa antre lama, selesai dalam <span className="text-text-primary font-medium">30 menit</span> dengan presisi maksimal oleh barber bersertifikasi.
+              Grooming premium untuk profesional aktif. Waktu Anda berharga. Tanpa antre lama, potongan presisi maksimal oleh seniman rambut bersertifikasi.
             </p>
           </MotionWrapper>
 
