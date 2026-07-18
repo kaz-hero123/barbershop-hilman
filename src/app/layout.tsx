@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Big_Shoulders, Inter } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
-const bigShoulders = Big_Shoulders({
-  variable: "--font-oswald",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
 });
 
@@ -14,12 +14,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "CREWCUT Studio - Presisi. Cepat. Tajam.",
-  description: "Grooming premium untuk profesional aktif. Tanpa antre lama, selesai dalam 30 menit dengan presisi maksimal oleh barber bersertifikasi.",
-  keywords: ["barbershop", "potong rambut", "crewcut", "barbershop jakarta", "potong rambut pria premium", "grooming", "barbershop tanpa antre"],
+  title: "CREWCUT Studio | Sebuah Jeda yang Mengubah",
+  description: "Bukan sekadar potong rambut. Rasakan pengalaman grooming premium di Jakarta Selatan. Duduk, rileks, dan serahkan pada ahlinya.",
+  keywords: ["barbershop premium", "potong rambut jakarta selatan", "grooming pria", "crewcut studio"],
   openGraph: {
-    title: "CREWCUT Studio | Barbershop Premium",
-    description: "Grooming premium untuk profesional aktif. Tanpa antre lama, selesai dalam 30 menit dengan presisi maksimal.",
+    title: "CREWCUT Studio | Jeda yang Mengubah",
+    description: "Bukan sekadar potong rambut. Rasakan pengalaman grooming premium di Jakarta Selatan.",
     url: "https://barbershop-hilman.vercel.app",
     siteName: "CREWCUT Studio",
     locale: "id_ID",
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CREWCUT Studio - Presisi. Cepat. Tajam.",
-    description: "Grooming premium untuk profesional aktif.",
+    title: "CREWCUT Studio | Sebuah Jeda yang Mengubah",
+    description: "Grooming premium di Jakarta Selatan.",
   }
 };
 
@@ -40,9 +40,9 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${bigShoulders.variable} ${inter.variable} h-full antialiased scroll-smooth`}
+      className={`${playfair.variable} ${inter.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full bg-bg-main text-text-primary antialiased selection:bg-gold selection:text-black">
+      <body className="min-h-full bg-brand-cream text-brand-espresso antialiased selection:bg-brand-terracotta/30 selection:text-brand-espresso">
         {children}
       </body>
     </html>
