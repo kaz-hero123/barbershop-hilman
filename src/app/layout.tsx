@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CREWCUT Studio | Barbershop Premium",
     description: "Grooming premium untuk profesional aktif. Tanpa antre lama, selesai dalam 30 menit dengan presisi maksimal.",
-    url: "https://crewcutstudio.com",
+    url: "https://barbershop-hilman.vercel.app",
     siteName: "CREWCUT Studio",
     locale: "id_ID",
     type: "website",
