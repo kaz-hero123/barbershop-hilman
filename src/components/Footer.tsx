@@ -10,13 +10,10 @@ export default function Footer() {
           
           <div className="flex flex-col justify-between">
             <div>
-              <h2 className="font-display text-sm font-bold uppercase tracking-widest text-gold">
-                Hubungi & Kunjungi
-              </h2>
-              <p className="mt-3 font-display text-3xl sm:text-5xl font-bold uppercase tracking-tight text-text-primary">
+              <h2 className="font-display text-4xl sm:text-5xl font-bold uppercase tracking-tight text-text-primary">
                 LOKASI & JAM OPERASIONAL
-              </p>
-              <div className="mt-4 h-1 w-12 bg-gold" />
+              </h2>
+              <div className="mt-6 h-1 w-12 bg-gold" />
               
               <div className="mt-10 space-y-8">
                 <div className="flex items-start gap-4">
@@ -97,7 +94,7 @@ export default function Footer() {
               CREW<span className="text-gold">CUT</span> STUDIO
             </a>
             <p className="mt-2 text-xs text-text-secondary font-light max-w-xs leading-relaxed">
-              Gaya rambut premium dengan presisi tinggi dan efisiensi waktu maksimal. Presisi. Cepat. Tajam.
+              Grooming premium untuk profesional aktif. Tajam dan presisi, tanpa membuang waktu Anda.
             </p>
           </div>
 
