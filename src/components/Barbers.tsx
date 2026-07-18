@@ -8,18 +8,19 @@ export default function Barbers() {
   return (
     <section id="barber" className="py-24 bg-bg-surface/50 border-t border-b border-border-main scroll-mt-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <MotionWrapper animation="slideUp" className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="font-display text-sm font-bold uppercase tracking-widest text-gold">
-            Tim Barber Kami
-          </h2>
-          <p className="mt-3 font-display text-3xl sm:text-5xl font-bold uppercase tracking-tight text-text-primary">
-            KREATIF & PRESISI
-          </p>
-          <div className="mt-4 h-1 w-12 bg-gold mx-auto" />
-          <p className="mt-4 text-base text-text-secondary">
-            Setiap barber kami adalah seniman berlisensi yang berdedikasi tinggi memberikan potongan paling tajam untuk Anda.
-          </p>
-        </MotionWrapper>
+        <div className="mb-16 flex flex-col md:flex-row items-start md:items-end gap-6 max-w-4xl mx-auto">
+          <MotionWrapper animation="slideUp" className="flex items-start gap-4 sm:gap-6">
+            <span className="font-display text-7xl sm:text-8xl font-bold text-gold/20 leading-none">02</span>
+            <div>
+              <h2 className="font-display text-3xl sm:text-5xl font-bold uppercase tracking-tight text-text-primary mt-2">
+                KREATIF & PRESISI
+              </h2>
+              <p className="mt-4 text-base text-text-secondary max-w-xl">
+                Setiap barber kami adalah seniman berlisensi yang berdedikasi tinggi memberikan potongan paling tajam untuk Anda.
+              </p>
+            </div>
+          </MotionWrapper>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {BARBERS.map((barber, index) => (
@@ -34,7 +35,7 @@ export default function Barbers() {
                   src={barber.imageUrl}
                   alt={`Barber ${barber.name}`}
                   fill
-                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105 filter grayscale contrast-110 brightness-95 group-hover:grayscale-0"
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105 filter grayscale contrast-110 brightness-95"
                   sizes="(max-w-768px) 100vw, 400px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-surface via-transparent to-transparent opacity-80" />
