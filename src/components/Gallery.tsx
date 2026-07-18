@@ -14,8 +14,7 @@ export default function Gallery() {
           <p className="mt-3 font-display text-3xl sm:text-5xl font-bold uppercase tracking-tight text-text-primary">
             KARYA TERBAIK KAMI
           </p>
-          <div className="mt-4 h-1 w-12 bg-gold mx-auto" />
-          <p className="mt-4 text-base text-text-secondary">
+          <p className="mt-6 text-base text-text-secondary">
             Setiap garis rambut dan sudut potong dikerjakan dengan standar akurasi tinggi. Kami bangga dengan hasil kerja kami.
           </p>
         </MotionWrapper>
