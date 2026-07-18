@@ -1,8 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Highlights from "@/components/Highlights";
-import Services from "@/components/Services";
-import Barbers from "@/components/Barbers";
+import Experience from "@/components/Experience";
+import Team from "@/components/Team";
 import Gallery from "@/components/Gallery";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
@@ -13,9 +12,8 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
-        <Highlights />
-        <Services />
-        <Barbers />
+        <Experience />
+        <Team />
         <Gallery />
         <Testimonials />
       </main>
@@ -23,4 +21,3 @@ export default function Home() {
     </>
   );
 }
-
