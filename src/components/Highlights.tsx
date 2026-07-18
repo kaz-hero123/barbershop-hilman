@@ -1,5 +1,6 @@
 import React from "react";
-import { Clock, Crosshair, CalendarCheck } from "lucide-react";
+import { Clock, Crosshair, CalendarCheck, Star, Users, Calendar } from "lucide-react";
+import { TRUST_STATS } from "@/data";
 import { MotionWrapper } from "@/components/ui/MotionWrapper";
 
 export default function Highlights() {
@@ -47,6 +48,32 @@ export default function Highlights() {
               </div>
             </MotionWrapper>
           ))}
+        </div>
+
+        <div className="mt-8 pt-8 border-t border-border-main">
+          <div className="flex flex-wrap justify-center sm:justify-between items-center gap-6 px-2 sm:px-4">
+            <MotionWrapper animation="fadeIn" delay={0.4} className="flex items-center gap-2">
+              <Star className="h-5 w-5 text-gold fill-current" />
+              <span className="font-display text-xl font-bold text-text-primary">{TRUST_STATS.rating}</span>
+              <span className="text-sm text-text-secondary uppercase tracking-widest ml-1">{TRUST_STATS.reviewsCount} Google Reviews</span>
+            </MotionWrapper>
+            
+            <div className="hidden sm:block h-1.5 w-1.5 bg-border-main rounded-full" />
+            
+            <MotionWrapper animation="fadeIn" delay={0.5} className="flex items-center gap-2">
+              <Users className="h-5 w-5 text-gold" />
+              <span className="font-display text-xl font-bold text-text-primary">{TRUST_STATS.clientsCount}</span>
+              <span className="text-sm text-text-secondary uppercase tracking-widest ml-1">Klien Puas</span>
+            </MotionWrapper>
+
+            <div className="hidden sm:block h-1.5 w-1.5 bg-border-main rounded-full" />
+            
+            <MotionWrapper animation="fadeIn" delay={0.6} className="flex items-center gap-2">
+              <Calendar className="h-5 w-5 text-gold" />
+              <span className="font-display text-xl font-bold text-text-primary">EST.</span>
+              <span className="text-sm text-text-secondary uppercase tracking-widest ml-1">{TRUST_STATS.established}</span>
+            </MotionWrapper>
+          </div>
         </div>
       </div>
     </section>
