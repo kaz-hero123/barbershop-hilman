@@ -44,7 +44,7 @@ export const BARBERS = [
     nickname: "The Barber",
     specialty: "Classic Cut & Beard Sculpting",
     bio: "Ahli dalam potongan klasik legendaris dan penataan jenggot yang presisi sesuai karakter dan garis rahang Anda.",
-    imageUrl: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=600&h=800",
+    imageUrl: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&q=80&w=600&h=800",
   },
 ];
 
@@ -69,9 +69,9 @@ export const GALLERY_PHOTOS = [
   },
   {
     id: 4,
-    alt: "Razor Beard Shaping Detail",
-    imageUrl: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&q=80&w=600&h=600",
-    category: "Beard Work",
+    alt: "Classic Scissor Work",
+    imageUrl: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&q=80&w=600&h=600",
+    category: "Classic Cut",
   },
   {
     id: 5,
@@ -90,23 +90,30 @@ export const GALLERY_PHOTOS = [
 export const TESTIMONIALS = [
   {
     id: 1,
-    text: "Biasanya malas ke barbershop karena antre berjam-jam. Di CREWCUT booking-nya sangat mudah lewat WA, pas datang langsung ditangani. Presisi skin fade-nya luar biasa rapi!",
+    text: "Masuk berantakan, keluar benar-benar fresh dalam 30 menit. Presisi fade-nya gila, nggak ada sisa rambut kasar di leher.",
     author: "Budi Santoso",
-    role: "Klien Tetap / Executive",
+    role: "Klien sejak 2023",
     rating: 5,
   },
   {
     id: 2,
-    text: "Rian benar-benar teliti sewaktu merapikan jenggot saya. Beard sculpting-nya pas sekali dengan garis rahang dan bentuk wajah. Proses kerjanya cepat tapi detailnya tetap terjaga.",
+    text: "Barber Rian teliti banget ngerjain beard sculpting. Garis rahang jadi kelihatan lebih tegas. Sesuai request dan cepat.",
     author: "Adrian Wijaya",
-    role: "Klien Tetap / Creative Director",
+    role: "Langganan bulanan",
     rating: 5,
   },
   {
     id: 3,
-    text: "Atmosfer tempatnya sangat clean dan minimalis urban. Layanan Classic Cut dari Dian sangat memuaskan, potongannya rapi dan awet tumbuhnya. Rekomendasi utama untuk yang sibuk.",
+    text: "Awalnya nyoba karena sistem booking WA-nya gampang dan anti antre. Ternyata potongannya emang sekelas studio premium. Vibe tempatnya juga asik buat nyantai bentar dari kerjaan.",
     author: "Yusuf Pratama",
-    role: "Klien Tetap / Software Engineer",
+    role: "Klien baru",
     rating: 5,
   },
 ];
+
+export const TRUST_STATS = {
+  rating: 4.9,
+  reviewsCount: "230+",
+  clientsCount: "1,200+",
+  established: "2021",
+};
