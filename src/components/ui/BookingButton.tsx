@@ -4,17 +4,13 @@ import React from "react";
 import { getWhatsAppLink } from "@/utils/whatsapp";
 import { cn } from "@/utils/cn";
 
-interface BookingButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface BookingButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   message: string;
   variant?: "primary" | "secondary" | "outline";
   children: React.ReactNode;
 }
 
 export function BookingButton({ message, variant = "primary", className, children, ...props }: BookingButtonProps) {
-  const handleBooking = () => {
-    window.open(getWhatsAppLink(message), "_blank");
-  };
-
   const baseStyles = "inline-flex items-center justify-center rounded-lg font-bold transition-all duration-300 cursor-pointer transform hover:-translate-y-0.5";
   
   const variants = {
@@ -24,12 +20,15 @@ export function BookingButton({ message, variant = "primary", className, childre
   };
 
   return (
-    <button
-      onClick={handleBooking}
+    <a
+      href={getWhatsAppLink(message)}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Pesan melalui WhatsApp: ${message}`}
       className={cn(baseStyles, variants[variant], className)}
       {...props}
     >
       {children}
-    </button>
+    </a>
   );
 }
