@@ -10,18 +10,17 @@ export default function Services() {
 
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <MotionWrapper animation="slideUp" className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="font-display text-sm font-bold uppercase tracking-widest text-gold">
-            Menu Layanan & Harga
-          </h2>
-          <p className="mt-3 font-display text-3xl sm:text-5xl font-bold uppercase tracking-tight text-text-primary">
-            PILIH GAYA TAJAM ANDA
-          </p>
-          <div className="mt-4 h-1 w-12 bg-gold mx-auto" />
-          <p className="mt-4 text-base text-text-secondary">
-            Semua layanan dikerjakan secara presisi dengan estimasi durasi transparan agar waktu berharga Anda tidak terbuang sia-sia.
-          </p>
-        </MotionWrapper>
+        <div className="mb-16">
+          <MotionWrapper animation="slideUp" className="max-w-2xl">
+            <h2 className="font-display text-4xl sm:text-5xl font-bold uppercase tracking-tight text-text-primary">
+              PILIH GAYA TAJAM ANDA
+            </h2>
+            <div className="mt-6 h-1 w-12 bg-gold" />
+            <p className="mt-6 text-base text-text-secondary">
+              Semua layanan dikerjakan secara presisi dengan estimasi durasi transparan agar waktu berharga Anda tidak terbuang sia-sia.
+            </p>
+          </MotionWrapper>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {SERVICES.map((service, index) => (
