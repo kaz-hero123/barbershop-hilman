@@ -7,14 +7,14 @@ export default function Testimonials() {
   return (
     <section className="py-24 bg-bg-surface/30 border-t border-b border-border-main">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <MotionWrapper animation="slideUp" className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="font-display text-sm font-bold uppercase tracking-widest text-gold">
-            Testimonial Klien
+        <MotionWrapper animation="slideUp" className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center justify-center gap-2 rounded-full border border-border-main bg-bg-main px-4 py-1.5 mb-6">
+            <Star className="h-4 w-4 text-gold fill-current" />
+            <span className="text-sm font-bold text-text-primary">4.9/5 Average Rating</span>
+          </div>
+          <h2 className="font-display text-4xl sm:text-5xl font-bold uppercase tracking-tight text-text-primary">
+            DARI MEREKA YANG PERNAH DUDUK DI KURSI KAMI
           </h2>
-          <p className="mt-3 font-display text-3xl sm:text-5xl font-bold uppercase tracking-tight text-text-primary">
-            APA KATA MEREKA
-          </p>
-          <div className="mt-4 h-1 w-12 bg-gold mx-auto" />
         </MotionWrapper>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
