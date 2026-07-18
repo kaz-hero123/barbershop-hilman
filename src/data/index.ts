@@ -81,8 +81,8 @@ export const GALLERY_PHOTOS = [
   },
   {
     id: 6,
-    alt: "CREWCUT Studio Interior Vibe",
-    imageUrl: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=600&h=600",
+    alt: "Classic Barbershop Setup",
+    imageUrl: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=600&h=600",
     category: "Interior",
   },
 ];

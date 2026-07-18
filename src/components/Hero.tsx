@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="relative flex min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden py-20">
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1521590832167-7bfcfaa6362f?auto=format&fit=crop&q=80&w=1920"
+          src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=1920"
           alt="CREWCUT Studio Interior"
           fill
           priority
