@@ -1,119 +1,82 @@
+export const BUSINESS_INFO = {
+  name: "CREWCUT Studio",
+  address: "Jl. Senopati No. 45, Kebayoran Baru, Jakarta Selatan",
+  hours: "Senin–Minggu 10.00–21.00 WIB",
+  phone: "6281234567890", // Placeholder for WA CTA
+  whatsappLink: "https://wa.me/6281234567890?text=Halo%20CREWCUT%20Studio,%20saya%20ingin%20reservasi%20kursi.",
+  completedRituals: "2,000+",
+};
+
 export const SERVICES = [
   {
     id: "classic-cut",
     name: "Classic Cut",
-    price: "Rp 70.000",
-    duration: "30 Menit",
-    description: "Potong rambut klasik disesuaikan dengan bentuk wajah Anda + styling pomade premium.",
+    duration: "30 menit",
+    price: "Rp70.000",
+    description: "Fondasi dari penampilan rapi. Potongan presisi yang menyesuaikan struktur wajah untuk gaya timeless yang mudah dirawat.",
   },
   {
     id: "precision-fade",
     name: "Precision Fade",
-    price: "Rp 85.000",
-    duration: "45 Menit",
-    description: "Potongan fade super halus (skin fade, taper, atau undercut) menggunakan clipper presisi tinggi.",
+    duration: "45 menit",
+    price: "Rp85.000",
+    description: "Transisi mulus tanpa cela. Dikerjakan dengan ketelitian tinggi untuk hasil fade yang tajam dan berkarakter.",
   },
   {
     id: "beard-grooming",
     name: "Beard Grooming",
-    price: "Rp 50.000",
-    duration: "25 Menit",
-    description: "Cukur, rapikan, dan bentuk jenggot/kumis disertai aplikasi handuk hangat dan massage wajah rileks.",
+    duration: "25 menit",
+    price: "Rp50.000",
+    description: "Bentuk dan garis tegas untuk rahang Anda. Perawatan menyeluruh yang mengembalikan kebanggaan pada janggut Anda.",
   },
   {
-    id: "the-crew-special",
+    id: "crew-special",
     name: "The Crew Special",
-    price: "Rp 120.000",
-    duration: "50 Menit",
-    description: "Paket lengkap: Potong rambut presisi, cuci rambut penyegar, pijat kepala rileks, dan styling akhir.",
+    duration: "50 menit",
+    price: "Rp120.000",
+    description: "Pengalaman grooming paripurna. Kombinasi potongan presisi, perawatan wajah ringan, dan pijatan relaksasi.",
   },
 ];
 
-export const BARBERS = [
+export const TEAM = [
   {
     id: "rian",
     name: "Rian",
-    nickname: "The Clipper",
-    specialty: "Skin Fade & Modern Taper",
-    bio: "Rian memadukan presisi geometris dengan teknik potong modern untuk menghasilkan fade yang mulus sempurna.",
-    imageUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600&h=800",
+    title: "The Clipper",
+    image: "https://images.unsplash.com/photo-1618306917637-2fb079b7b9cc?q=80&w=600&auto=format&fit=crop",
+    specialty: "Ahli dalam menciptakan fade yang nyaris tak terlihat batasnya dan taper modern. Rian melihat setiap kepala sebagai kanvas presisi geometris.",
   },
   {
     id: "dian",
     name: "Dian",
-    nickname: "The Barber",
-    specialty: "Classic Cut & Beard Sculpting",
-    bio: "Ahli dalam potongan klasik legendaris dan penataan jenggot yang presisi sesuai karakter dan garis rahang Anda.",
-    imageUrl: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&q=80&w=600&h=800",
+    title: "The Barber",
+    image: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=600&auto=format&fit=crop",
+    specialty: "Menjaga tradisi pangkas klasik tetap hidup. Sentuhan tangan Dian pada classic cut dan beard sculpting menjamin keeleganan yang tak lekang oleh waktu.",
   },
 ];
 
-export const GALLERY_PHOTOS = [
-  {
-    id: 1,
-    alt: "Precision Skin Fade",
-    imageUrl: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80&w=600&h=600",
-    category: "Fade Work",
-  },
-  {
-    id: 2,
-    alt: "Hair Styling Process",
-    imageUrl: "https://images.unsplash.com/photo-1647140655214-e4a2d914971f?auto=format&fit=crop&q=80&w=600&h=600",
-    category: "Styling",
-  },
-  {
-    id: 3,
-    alt: "Premium Clipper and Tools",
-    imageUrl: "https://images.unsplash.com/photo-1596362601603-b74f6ef166e4?auto=format&fit=crop&q=80&w=600&h=600",
-    category: "Tools & Vibe",
-  },
-  {
-    id: 4,
-    alt: "Classic Scissor Work",
-    imageUrl: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?auto=format&fit=crop&q=80&w=600&h=600",
-    category: "Classic Cut",
-  },
-  {
-    id: 5,
-    alt: "Taper Fade Sharp Outline",
-    imageUrl: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600&h=600",
-    category: "Haircut",
-  },
-  {
-    id: 6,
-    alt: "Classic Barbershop Setup",
-    imageUrl: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=600&h=600",
-    category: "Interior",
-  },
-];
-
+// 3 varied testimonial formats
 export const TESTIMONIALS = [
   {
-    id: 1,
-    text: "Masuk berantakan, keluar benar-benar fresh dalam 30 menit. Presisi fade-nya gila, nggak ada sisa rambut kasar di leher.",
-    author: "Budi Santoso",
-    role: "Klien sejak 2023",
-    rating: 5,
+    id: "t1",
+    type: "long-form",
+    name: "Baskara T.",
+    context: "Klien sejak 2024",
+    content: "Saya tidak pernah menyangka potong rambut bisa senyaman ini. Mereka tidak hanya merapikan, tapi memahami arah tumbuh rambut saya. The Crew Special benar-benar mengubah mood saya seharian.",
   },
   {
-    id: 2,
-    text: "Barber Rian teliti banget ngerjain beard sculpting. Garis rahang jadi kelihatan lebih tegas. Sesuai request dan cepat.",
-    author: "Adrian Wijaya",
-    role: "Langganan bulanan",
-    rating: 5,
+    id: "t2",
+    type: "metric",
+    name: "Andi Wijaya",
+    context: "Eksekutif",
+    metric: "14 Bulan",
+    content: "Sudah belasan bulan berturut-turut saya percayakan penampilan saya di sini. Konsistensi mereka tak tertandingi.",
   },
   {
-    id: 3,
-    text: "Awalnya nyoba karena sistem booking WA-nya gampang dan anti antre. Ternyata potongannya emang sekelas studio premium. Vibe tempatnya juga asik buat nyantai bentar dari kerjaan.",
-    author: "Yusuf Pratama",
-    role: "Klien baru",
-    rating: 5,
+    id: "t3",
+    type: "micro",
+    name: "Reza F.",
+    context: "Musisi",
+    content: "Satu-satunya tempat yang saya percaya untuk fade yang benar-benar bersih.",
   },
 ];
-
-export const TRUST_STATS = {
-  rating: 4.9,
-  reviewsCount: "230+",
-  clientsCount: "1,200+",
-  established: "2021",
-};

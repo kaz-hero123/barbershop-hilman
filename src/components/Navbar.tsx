@@ -1,117 +1,116 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { BUSINESS_INFO } from "@/data";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/Button";
+import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/utils/cn";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: "Pengalaman", href: "#pengalaman" },
-    { name: "Ahli", href: "#tim" },
-    { name: "Karya", href: "#karya" },
-    { name: "Lokasi", href: "#kontak" },
+    { name: "Layanan", href: "#services" },
+    { name: "Tim Kami", href: "#crew" },
+    { name: "Cerita", href: "#voices" },
   ];
 
   return (
-    <header 
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className={cn(
-        "fixed top-0 z-50 w-full transition-all duration-500",
-        scrolled ? "bg-brand-cream/95 backdrop-blur-md border-b border-border-main py-4" : "bg-transparent py-6"
+        "fixed top-0 left-0 right-0 z-50 transition-colors duration-300",
+        isScrolled ? "bg-warm-cream/90 backdrop-blur-md shadow-sm" : "bg-transparent"
       )}
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          <div className="flex-shrink-0">
-            <a href="#" className="font-display text-2xl font-bold tracking-wide text-brand-espresso">
-              CREWCUT
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        {/* Logo */}
+        <a href="#" className="text-2xl font-bold font-display tracking-tight text-charcoal">
+          CREWCUT<span className="text-amber-accent">.</span>
+        </a>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="text-sm font-medium text-muted-text hover:text-charcoal transition-colors focus-visible:outline-amber-accent"
+            >
+              {link.name}
             </a>
-          </div>
+          ))}
+        </nav>
 
-          <nav className="hidden md:flex space-x-10">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-sm font-medium text-brand-muted hover:text-brand-terracotta transition-colors duration-300"
-              >
-                {link.name}
-              </a>
-            ))}
-          </nav>
-
-          <div className="hidden md:block">
-            <Button
-              message="Halo CREWCUT Studio, saya ingin booking jadwal potong rambut."
-              variant="outline"
-              className="px-6 py-2.5 text-xs font-semibold tracking-widest uppercase"
-            >
-              Atur Jadwal
-            </Button>
-          </div>
-
-          <div className="md:hidden">
-            <button
-              onClick={toggleMenu}
-              type="button"
-              className="inline-flex items-center justify-center p-2 text-brand-espresso focus:outline-none"
-              aria-expanded={isOpen}
-            >
-              <span className="sr-only">Open main menu</span>
-              {isOpen ? <X className="h-6 w-6" strokeWidth={1.5} /> : <Menu className="h-6 w-6" strokeWidth={1.5} />}
-            </button>
-          </div>
+        {/* Desktop CTA */}
+        <div className="hidden md:block">
+          <motion.a
+            href={BUSINESS_INFO.whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ y: -2, boxShadow: "0 8px 24px rgba(180,83,9,0.3)" }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center justify-center px-6 py-2.5 bg-amber-accent text-warm-white font-medium text-sm rounded-full transition-colors hover:bg-amber-accent/90 focus-visible:outline-charcoal"
+          >
+            Reservasi Kursi
+          </motion.a>
         </div>
+
+        {/* Mobile Toggle */}
+        <button
+          className="md:hidden p-2 -mr-2 text-charcoal focus-visible:outline-amber-accent"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+          aria-expanded={isMobileMenuOpen}
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
 
+      {/* Mobile Nav */}
       <AnimatePresence>
-        {isOpen && (
+        {isMobileMenuOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden overflow-hidden bg-brand-cream border-b border-border-main absolute w-full top-full"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-warm-cream border-t border-warm-border overflow-hidden"
           >
-            <div className="space-y-1 px-6 py-8">
+            <div className="px-6 py-8 flex flex-col gap-6">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block py-4 text-xl font-display text-brand-espresso border-b border-border-main/50"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-lg font-medium text-charcoal hover:text-amber-accent"
                 >
                   {link.name}
                 </a>
               ))}
-              <div className="mt-8">
-                <Button
-                  message="Halo CREWCUT Studio, saya ingin booking jadwal potong rambut."
-                  variant="primary"
-                  className="w-full py-4 text-sm font-semibold tracking-widest uppercase"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Atur Jadwal Sekarang
-                </Button>
-              </div>
+              <a
+                href={BUSINESS_INFO.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="inline-flex items-center justify-center w-full px-6 py-3 mt-4 bg-amber-accent text-warm-white font-medium rounded-full"
+              >
+                Reservasi Kursi
+              </a>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   );
 }

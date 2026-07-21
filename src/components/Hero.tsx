@@ -1,93 +1,106 @@
-import React from "react";
-import Image from "next/image";
-import { Button } from "@/components/ui/Button";
-import { MotionWrapper } from "@/components/ui/MotionWrapper";
-import { TRUST_STATS } from "@/legacy/data";
+"use client";
+
+import { motion } from "motion/react";
+import { BUSINESS_INFO } from "@/data";
+import { useEffect, useState } from "react";
 
 export default function Hero() {
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mediaQuery.matches);
+  }, []);
+
+  const headline = "Setiap potongan adalah ritual.";
+  const words = headline.split(" ");
+
+  const containerVariants: any = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const wordVariants: any = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+    },
+  };
+
   return (
-    <section className="relative min-h-[100svh] flex flex-col justify-center pt-20 overflow-hidden bg-brand-cream">
-      {/* Background Image with warm filter */}
+    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-charcoal">
+      {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=2000"
+        <img
+          src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=2000&auto=format&fit=crop"
           alt="CREWCUT Studio Atmosphere"
-          fill
-          priority
-          className="object-cover object-center img-warm-filter opacity-30 mix-blend-multiply"
+          className="w-full h-full object-cover object-center opacity-40 img-warm-filter"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-cream/80 via-brand-cream/50 to-brand-cream" />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 to-transparent"></div>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 w-full">
-        <div className="max-w-4xl">
-          
-          <MotionWrapper animation="slideUp" delay={0.1}>
-            <span className="text-sm font-medium tracking-widest text-brand-terracotta uppercase mb-6 block">
-              Lebih dari sekadar potongan rambut
-            </span>
-          </MotionWrapper>
-
-          <MotionWrapper animation="reveal" delay={0.2}>
-            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-medium text-brand-espresso leading-[1.1] tracking-tight">
-              Kapan terakhir kali Anda duduk, rileks, dan keluar merasa <span className="italic text-brand-terracotta">siap untuk segalanya?</span>
-            </h1>
-          </MotionWrapper>
-
-          <MotionWrapper animation="slideUp" delay={0.4}>
-            <p className="mt-8 text-lg sm:text-xl text-brand-muted leading-relaxed max-w-2xl font-light">
-              Kami menyebutnya jeda yang mengubah. 30 menit yang didedikasikan untuk ketenangan Anda dan keahlian kami. Tanpa antre panjang, tanpa kompromi.
-            </p>
-          </MotionWrapper>
-
-          <MotionWrapper animation="slideUp" delay={0.6}>
-            <div className="mt-12 flex flex-col sm:flex-row items-center gap-6">
-              <Button 
-                message="Halo CREWCUT Studio, saya ingin mengatur jadwal kunjungan."
-                className="w-full sm:w-auto px-10 py-5 text-sm uppercase tracking-widest font-semibold"
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+        <div className="max-w-3xl">
+          <motion.h1
+            className="text-5xl md:text-7xl font-display font-bold text-warm-cream leading-[1.1] mb-6 flex flex-wrap gap-x-4 gap-y-2"
+            variants={prefersReducedMotion ? {} : containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {words.map((word, idx) => (
+              <motion.span
+                key={idx}
+                variants={prefersReducedMotion ? {} : wordVariants}
+                className="inline-block"
               >
-                Amankan Kursi Anda
-              </Button>
-              
-              <a href="#pengalaman" className="text-sm font-medium text-brand-espresso hover:text-brand-terracotta transition-colors underline underline-offset-4">
-                Jelajahi Menu Kami
-              </a>
-            </div>
-          </MotionWrapper>
+                {word}
+              </motion.span>
+            ))}
+          </motion.h1>
+
+          <motion.p
+            initial={prefersReducedMotion ? {} : { opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+            className="text-lg md:text-xl text-warm-cream/80 max-w-xl mb-10 leading-relaxed"
+          >
+            Lebih dari sekadar merapikan rambut. Kami merancang pengalaman grooming presisi yang mengembalikan rasa percaya diri Anda, langsung di pusat Senopati.
+          </motion.p>
+
+          <motion.div
+            initial={prefersReducedMotion ? {} : { opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
+            className="flex flex-wrap items-center gap-4"
+          >
+            <motion.a
+              href={BUSINESS_INFO.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={prefersReducedMotion ? {} : { y: -2, boxShadow: "0 8px 24px rgba(180,83,9,0.4)" }}
+              whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
+              className="inline-flex items-center justify-center px-8 py-4 bg-amber-accent text-warm-white font-medium text-lg rounded-full transition-colors hover:bg-amber-accent/90 focus-visible:outline-warm-cream"
+            >
+              Mulai Ritualmu
+            </motion.a>
+            <a
+              href="#services"
+              className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-warm-cream font-medium text-lg rounded-full transition-colors hover:bg-white/10 focus-visible:outline-warm-cream"
+            >
+              Lihat Layanan
+            </a>
+          </motion.div>
         </div>
       </div>
-
-      {/* Integrated Trust Bar */}
-      <MotionWrapper 
-        animation="fadeIn" 
-        delay={0.8}
-        className="relative z-10 mt-auto pt-20 pb-8 mx-auto max-w-7xl px-6 lg:px-8 w-full"
-      >
-        <div className="border-t border-brand-espresso/10 pt-8 flex flex-wrap gap-x-12 gap-y-6 items-center">
-          <div className="flex items-center gap-3">
-            <div className="flex -space-x-2">
-              <div className="w-8 h-8 rounded-full bg-brand-surface border-2 border-brand-cream overflow-hidden">
-                <Image src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100&h=100" alt="Client" width={32} height={32} className="object-cover" />
-              </div>
-              <div className="w-8 h-8 rounded-full bg-brand-surface border-2 border-brand-cream overflow-hidden">
-                <Image src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=100&h=100" alt="Client" width={32} height={32} className="object-cover" />
-              </div>
-              <div className="w-8 h-8 rounded-full bg-brand-terracotta border-2 border-brand-cream flex items-center justify-center text-[10px] font-bold text-white">
-                4.9★
-              </div>
-            </div>
-            <div className="text-sm text-brand-espresso font-medium">
-              <span className="font-bold">{TRUST_STATS.rating} dari 5</span> berdasarkan {TRUST_STATS.reviewsCount} ulasan.
-            </div>
-          </div>
-          
-          <div className="hidden sm:block w-px h-8 bg-brand-espresso/10"></div>
-          
-          <div className="text-sm text-brand-espresso font-medium">
-            Dipercaya oleh <span className="font-bold">{TRUST_STATS.clientsCount} klien</span> sejak {TRUST_STATS.established}.
-          </div>
-        </div>
-      </MotionWrapper>
     </section>
   );
 }
