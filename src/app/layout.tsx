@@ -1,35 +1,22 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-});
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "CREWCUT Studio | Sebuah Jeda yang Mengubah",
-  description: "Bukan sekadar potong rambut. Rasakan pengalaman grooming premium di Jakarta Selatan. Duduk, rileks, dan serahkan pada ahlinya.",
-  keywords: ["barbershop premium", "potong rambut jakarta selatan", "grooming pria", "crewcut studio"],
-  openGraph: {
-    title: "CREWCUT Studio | Jeda yang Mengubah",
-    description: "Bukan sekadar potong rambut. Rasakan pengalaman grooming premium di Jakarta Selatan.",
-    url: "https://barbershop-hilman.vercel.app",
-    siteName: "CREWCUT Studio",
-    locale: "id_ID",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "CREWCUT Studio | Sebuah Jeda yang Mengubah",
-    description: "Grooming premium di Jakarta Selatan.",
-  }
+  title: "CREWCUT Studio | Momen Grooming Premium di Senopati",
+  description: "Lebih dari sekadar potong rambut. CREWCUT Studio menawarkan ritual grooming dengan presisi tinggi di Senopati, Jakarta Selatan.",
 };
 
 export default function RootLayout({
@@ -38,11 +25,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="id"
-      className={`${playfair.variable} ${inter.variable} h-full antialiased scroll-smooth`}
-    >
-      <body className="min-h-full bg-brand-cream text-brand-espresso antialiased selection:bg-brand-terracotta/30 selection:text-brand-espresso">
+    <html lang="id">
+      <body
+        className={`${inter.variable} ${playfair.variable} antialiased bg-warm-cream text-charcoal`}
+      >
         {children}
       </body>
     </html>

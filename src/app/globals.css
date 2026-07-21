@@ -4,48 +4,45 @@
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-display: var(--font-playfair), Georgia, serif;
   
-  /* Option A: Warm Earth Tone Palette */
-  --color-brand-cream: #FAF5EF;
-  --color-brand-surface: #F2EBE1;
-  --color-brand-surface-elevated: #E8DECE;
-  
-  --color-brand-espresso: #2C2218;
-  --color-brand-muted: #5C5248;
-  --color-brand-terracotta: #C4724A;
-  --color-brand-sage: #7A8068;
-  
-  --color-border-main: #E3D7C5;
-  --color-text-primary: var(--color-brand-espresso);
-  --color-text-secondary: var(--color-brand-muted);
+  --color-warm-cream: #FAF7F2;
+  --color-warm-white: #FFFFFF;
+  --color-charcoal: #1C1917; /* stone-900 */
+  --color-amber-accent: #B45309; /* amber-700 */
+  --color-warm-border: #E7E5E4; /* stone-200 */
+  --color-muted-text: #57534E; /* stone-500 */
 }
 
-:root {
-  background-color: var(--color-brand-cream);
-  color: var(--color-brand-espresso);
+@layer base {
+  :root {
+    background-color: var(--color-warm-cream);
+    color: var(--color-charcoal);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
   font-family: var(--font-sans);
+  overflow-x: hidden;
 }
 
-/* 
-  Consistent Image Filter for Warm Editorial Look 
-  Applied to all images to ensure they match the palette
-*/
-.img-warm-filter {
-  filter: sepia(0.2) contrast(0.95) saturate(0.85) brightness(1.02);
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
 }
 
-/* Subtle noise texture overlay */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 9999;
-  opacity: 0.04;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+/* Base focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-amber-accent);
+  outline-offset: 2px;
+}
+
+/* Hide scrollbar for carousels/lists if needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
