@@ -46,6 +46,7 @@ export default function Crew() {
                   src={member.image}
                   alt={`Potret ${member.name}`}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover object-top transition-transform duration-700 group-hover:scale-105 img-warm-filter"
                 />
                 <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-transparent transition-colors duration-500" />

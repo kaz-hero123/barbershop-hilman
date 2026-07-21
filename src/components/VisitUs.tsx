@@ -89,6 +89,7 @@ export default function VisitUs() {
             src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1000&auto=format&fit=crop" 
             alt="Peta Lokasi" 
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover opacity-50 grayscale mix-blend-overlay"
           />
           <div className="relative z-10 text-center p-8 bg-charcoal/80 backdrop-blur-md rounded-2xl border border-warm-cream/10">

@@ -45,6 +45,7 @@ export default function Hero() {
           alt="CREWCUT Studio Atmosphere"
           fill
           priority
+          sizes="100vw"
           className="object-cover object-center opacity-40 img-warm-filter"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"></div>

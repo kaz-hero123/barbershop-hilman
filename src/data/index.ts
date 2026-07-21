@@ -45,7 +45,7 @@ export const TEAM: TeamMember[] = [
     id: "rian",
     name: "Rian",
     title: "The Clipper",
-    image: "https://images.unsplash.com/photo-1618306917637-2fb079b7b9cc?q=80&w=600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=600&auto=format&fit=crop",
     specialty: "Ahli dalam menciptakan fade yang nyaris tak terlihat batasnya dan taper modern. Rian melihat setiap kepala sebagai kanvas presisi geometris.",
   },
   {
