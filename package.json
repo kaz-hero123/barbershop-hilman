@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "framer-motion": "^12.42.2",
     "lucide-react": "^1.24.0",
     "motion": "^12.42.2",
     "next": "16.2.10",
@@ -25,7 +24,6 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
-    "puppeteer": "^25.3.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { TEAM } from "@/data";
+import Image from "next/image";
 
 export default function Crew() {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
@@ -41,11 +42,11 @@ export default function Crew() {
               className="flex flex-col group"
             >
               <div className="relative aspect-[4/5] md:aspect-square overflow-hidden rounded-2xl mb-8 bg-charcoal/5">
-                <img
+                <Image
                   src={member.image}
                   alt={`Potret ${member.name}`}
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 img-warm-filter"
-                  loading="lazy"
+                  fill
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105 img-warm-filter"
                 />
                 <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-transparent transition-colors duration-500" />
               </div>

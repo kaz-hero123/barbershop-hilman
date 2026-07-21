@@ -1,11 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Services from "@/components/Services";
-import Crew from "@/components/Crew";
-import Voices from "@/components/Voices";
-import VisitUs from "@/components/VisitUs";
-import Footer from "@/components/Footer";
+import dynamic from "next/dynamic";
+
+const Services = dynamic(() => import("@/components/Services"));
+const Crew = dynamic(() => import("@/components/Crew"));
+const Voices = dynamic(() => import("@/components/Voices"));
+const VisitUs = dynamic(() => import("@/components/VisitUs"));
+const Footer = dynamic(() => import("@/components/Footer"));
 
 export default function Home() {
   return (

@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { BUSINESS_INFO } from "@/data";
 import { MapPin, Clock } from "lucide-react";
+import Image from "next/image";
 
 export default function VisitUs() {
   return (
@@ -84,10 +85,11 @@ export default function VisitUs() {
           className="relative aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden border border-warm-cream/10 shadow-2xl bg-warm-cream/5 flex items-center justify-center"
         >
           {/* Placeholder for actual Google Maps iframe. Using an aesthetic map placeholder for the demo to maintain premium look without an API key */}
-          <img 
+          <Image
             src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1000&auto=format&fit=crop" 
             alt="Peta Lokasi" 
-            className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale mix-blend-overlay"
+            fill
+            className="object-cover opacity-50 grayscale mix-blend-overlay"
           />
           <div className="relative z-10 text-center p-8 bg-charcoal/80 backdrop-blur-md rounded-2xl border border-warm-cream/10">
             <MapPin className="w-10 h-10 text-amber-accent mx-auto mb-4" />

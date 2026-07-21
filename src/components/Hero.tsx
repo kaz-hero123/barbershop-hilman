@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { BUSINESS_INFO } from "@/data";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Hero() {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
@@ -39,10 +40,12 @@ export default function Hero() {
     <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-charcoal">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=2000&auto=format&fit=crop"
           alt="CREWCUT Studio Atmosphere"
-          className="w-full h-full object-cover object-center opacity-40 img-warm-filter"
+          fill
+          priority
+          className="object-cover object-center opacity-40 img-warm-filter"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 to-transparent"></div>

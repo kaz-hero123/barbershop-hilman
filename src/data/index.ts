@@ -1,4 +1,6 @@
-export const BUSINESS_INFO = {
+import { BusinessInfo, Service, TeamMember, Testimonial } from "@/types";
+
+export const BUSINESS_INFO: BusinessInfo = {
   name: "CREWCUT Studio",
   address: "Jl. Senopati No. 45, Kebayoran Baru, Jakarta Selatan",
   hours: "Senin–Minggu 10.00–21.00 WIB",
@@ -7,7 +9,7 @@ export const BUSINESS_INFO = {
   completedRituals: "2,000+",
 };
 
-export const SERVICES = [
+export const SERVICES: Service[] = [
   {
     id: "classic-cut",
     name: "Classic Cut",
@@ -38,7 +40,7 @@ export const SERVICES = [
   },
 ];
 
-export const TEAM = [
+export const TEAM: TeamMember[] = [
   {
     id: "rian",
     name: "Rian",
@@ -56,7 +58,7 @@ export const TEAM = [
 ];
 
 // 3 varied testimonial formats
-export const TESTIMONIALS = [
+export const TESTIMONIALS: Testimonial[] = [
   {
     id: "t1",
     type: "long-form",
