@@ -1,47 +1,65 @@
-# CREWCUT Studio - Landing Page Barbershop (Project #3)
+# CREWCUT Studio
 
-Landing page untuk **CREWCUT Studio**, sebuah barbershop berkonsep *modern minimalist* & *urban* dengan fokus pada kecepatan, ketepatan, dan kepuasan pelanggan (*"SHARP IN 30"*). Project ini dibangun sebagai bagian dari portofolio personal developer (Project #3 dari 5 pada tier landing page).
+A modern, high-performance landing page application for CREWCUT Studio, designed with a focus on premium grooming services and a "Warm Neutral" aesthetic. Built as part of a professional portfolio showcasing modern web development practices.
 
-## 🚀 Tech Stack
-- **Framework:** Next.js (App Router)
-- **Library:** React + TypeScript (TSX)
-- **Styling:** Tailwind CSS (v4)
-- **Deploy:** Vercel
+## Overview
 
-## ✨ Fitur Utama
-1. **Desain Urban Monochrome:** Memanfaatkan palet warna hitam arang (*warm black*), abu-abu, dan aksen *muted gold* untuk memberikan kesan premium, maskulin, dan profesional.
-2. **Konsep Hook "SHARP IN 30":** Narrative kuat yang menyasar profesional sibuk yang menginginkan potongan presisi tinggi dalam 30 menit.
-3. **Mekanisme WhatsApp CTA Dinamis:** Semua tombol *booking* terintegrasi langsung dengan WhatsApp secara instan menggunakan format URL encoding yang disesuaikan per-layanan secara otomatis (tanpa form submit/database/auth).
-4. **Desain Mobile-First & Responsive:** Optimal diakses dari berbagai ukuran layar, terutama perangkat mobile tempat di mana sebagian besar pelanggan melakukan pencarian lokal.
-5. **Interactive Map dengan Vibe Monokrom:** Integrasi Google Maps yang disesuaikan dengan filter CSS grayscale agar senada dengan visual aesthetics website.
-6. **Optimasi Gambar (`next/image`):** Menggunakan native image optimization untuk performa loading maksimal tanpa layout shift.
+This project implements a custom landing page architecture tailored for local business conversion. It utilizes "The Ritual" narrative to position grooming services as a premium experience. The application features a custom UI components system built with Tailwind CSS v4 and fluid animations via Motion, ensuring a premium user experience while maintaining strict accessibility and performance standards.
 
-## 🛠️ Cara Menjalankan Lokal
+## Technical Stack
 
-1. Clone repositori ini:
+- Framework: Next.js (App Router)
+- Language: TypeScript
+- Styling: Tailwind CSS (v4)
+- Animation: Motion
+- Environment: Node.js
+
+## Architecture & Optimizations
+
+The application has been audited and optimized following industry standards:
+
+- Performance: Implemented dynamic imports for below-the-fold components, minimizing initial load times and JavaScript payload.
+- SEO & Discoverability: Full Open Graph and Twitter Card integration, dynamic sitemap generation, and strict robots.txt configuration for optimal local search indexing.
+- Asset Optimization: Native Next.js Image component utilized across all graphical assets, enabling automatic WebP/AVIF format conversion, lazy loading, and accurate sizing directives.
+- Maintainability: Centralized business data logic, strict ESLint configuration enforced for clean code, and modular component architecture.
+- Accessibility: Integrated preferences for reduced motion and semantic HTML structure.
+
+## Local Development
+
+To run the application locally, follow these steps:
+
+1. Clone the repository:
    ```bash
    git clone https://github.com/kaz-hero123/barbershop-hilman.git
    cd barbershop-hilman
    ```
 
-2. Instal dependensi:
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-3. Jalankan server development:
+3. Start the development server:
    ```bash
    npm run dev
    ```
 
-4. Buka [http://localhost:3000](http://localhost:3000) di browser Anda.
+4. Access the application at http://localhost:3000.
 
-## ⚙️ Penyesuaian Produksi
-Untuk menggunakan template ini secara nyata, silakan sesuaikan file berikut:
-- **Nomor WhatsApp:** Edit nomor tujuan pada `src/utils/whatsapp.ts` (menggunakan format kode negara tanpa awalan `+` atau `0`, contoh: `6281234567890`).
-- **Alamat & Jam Operasional:** Edit teks informasi di file `src/components/Footer.tsx`.
-- **Foto Portofolio/Barber:** Ganti tautan gambar di `src/components/Barbers.tsx` dan `src/components/Gallery.tsx` dengan aset gambar asli Anda.
+## Configuration
 
-## 🌐 Live Demo & Deployment
-- **Link Live Demo:** [CREWCUT Studio on Vercel](https://barbershop-hilman.vercel.app)
-- **Repository:** [GitHub Repository](https://github.com/kaz-hero123/barbershop-hilman)
+Business logic and content can be modified in the central data configuration file without altering UI components. Update the `src/data/index.ts` file to modify:
+- Business information (Name, Address, Operating Hours)
+- Service offerings and pricing
+- Team member profiles and portfolio images
+- Testimonial data
+
+For styling modifications, refer to `src/app/globals.css` where design tokens and theme variables are defined.
+
+## Deployment
+
+The application is configured for seamless deployment on standard Node.js hosting environments or platforms like Vercel. Ensure all build checks pass via the following command prior to deployment:
+
+```bash
+npm run build
+```
